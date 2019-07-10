@@ -7,18 +7,9 @@ from settings.local import redis_db, mongo_db
 
 class MongoDB(object):
     def __init__(self, table):
-        '''
-
-        :param table: models中定义的表（models_obj.table）
-        '''
         self.table = table
 
     def insert(self, data):
-        '''
-
-        :param data: 插入的数据字典
-        :return: 成功返回自增id
-        '''
 
         # 重连数据库抛出异常
         for i in range(NUMBERS):
@@ -35,13 +26,6 @@ class MongoDB(object):
         return result
 
     def get(self, conditions, data=None):
-        '''
-       查询一条数据
-        :param conditions: 查询的条件（字典）
-        :param data: 显示指定的字段的字符串（不可以显示嵌套字典）
-        :return: 查询结果的字典
-        '''
-
         if data:
             mdata = {data: 1}
         else:
@@ -64,16 +48,7 @@ class MongoDB(object):
         return result
 
     def update(self, conditions, data, multi=False):
-        '''
-        修改一条数据
-        data的key为修改的字段，value为新值
-        如果修改的是嵌套的内容，则修改的key用.链接
-        例：{"roledata.nickSet": 1, "nick": name}
-        :param conditions: 查询条件（字典）
-        :param data: 更新的内容（字典）
-        :param multi: 如果为True，修改查询到的所有数据
-        :return: 
-        '''
+
         # conn.player.player.update({"userId": g.uoid}, {"$set": {"roledata.nickSet": 1, "nick": name}})
         udata = {"$set": data}
         for i in range(NUMBERS):
@@ -91,11 +66,6 @@ class MongoDB(object):
         return result
 
     def remove(self, conditions, multi=False):
-        '''
-        删除符合条件的所有数据
-        :param conditions: 查询条件
-        :param multi: 如果等于True 删除所有数据
-        '''
 
         if not conditions:
             if multi:
@@ -117,11 +87,6 @@ class MongoDB(object):
         return result
 
     def count(self, conditions):
-        '''
-        查询返回的条数
-        :param conditions: 查询条件的字典
-        :return: int类型，没有返回0
-        '''
 
         for i in range(NUMBERS):
             try:
@@ -137,20 +102,12 @@ class MongoDB(object):
         return result
 
 class RedisDB(object):
-    '''
-    字符串
-    '''
+
     def __init__(self, **kwargs):
 
         self.conn = redis.StrictRedis(**kwargs)
 
     def convert(self,data):
-        '''
-        :param data: bytes类型
-        :return: str 类型
-        如果传入的字典里面的key value是bytes，则可以递归将里面
-        的所有bytes转换为str
-        '''
         if isinstance(data, bytes):
             return data.decode('utf-8')
         if isinstance(data, dict):
@@ -160,11 +117,6 @@ class RedisDB(object):
         return data
 
     def json_format(self,data):
-        '''
-        :param data: redis数据库中取出的数据，或以 '包裹的类字典格式字符串
-        :return: 标准的以"包裹的json字符串
-        '''
-
         result = re.sub('\'', '\"', data)
         return result
 
@@ -172,10 +124,6 @@ class RedisDB(object):
         return self.conn
 
     def keys(self, key):
-        '''
-        :param key: key
-        :return: 返回key的列表如果key为*，返回所有的key,没有查到返回空列表
-        '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:
@@ -304,11 +252,6 @@ class RedisDB(object):
 
 
     def hget(self,name,key):
-        '''
-               :param name: 哈希表名
-               :param key: 哈希表的key
-               :return: 成功True 失败 False
-               '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:
@@ -342,11 +285,6 @@ class RedisDB(object):
 
 
     def hmset(self,key,map):
-        '''
-        :param key: key
-        :param map: 字典
-        :return: 成功True 失败 False
-        '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:
@@ -362,10 +300,6 @@ class RedisDB(object):
         return result
 
     def hlen(self,key):
-        '''
-        :param key: key
-        :return: key value对的个数
-        '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:
@@ -384,10 +318,6 @@ class RedisDB(object):
 
     # 以下为列表类型
     def lpop(self,key):
-        '''
-        :param key: key
-        :return: 从头部取出一个元素
-        '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:
@@ -405,10 +335,6 @@ class RedisDB(object):
 
 
     def rpush(self,key,*values):
-        '''
-               :param key: key
-               :return: 从头部取出一个元素
-               '''
         # 重连数据库抛出异常
         for i in range(NUMBERS):
             try:

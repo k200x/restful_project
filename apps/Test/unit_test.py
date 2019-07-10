@@ -43,7 +43,7 @@ class FeatureBuyAndGetTest(unittest.TestCase):
         app.testing = True
         self.client = app.test_client()
 
-    def test_but_feature(self):
+    def test_buy_feature(self):
         pass
 
     def test_get_feature(self):

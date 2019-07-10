@@ -5,7 +5,7 @@ from flask import jsonify
 def token_verify(fun):
 
     @functools.wraps(fun)
-    def wrapper( *args, **kwargs):
+    def wrapper(*args, **kwargs):
 
         data = {}
         return jsonify(data)

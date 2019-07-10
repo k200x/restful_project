@@ -24,7 +24,7 @@ class UserManager(object):
         # 从而避免互相查找的大量遍历
         feature_list = mongo_obj.conn.featureData.player_info.find_one({"user_id": user_id})
         feature_list.append(feature_id)
-        mongo_obj.conn.playerData.feature_info.insert_one({"user_id": user_id}, {"$set": {"feature_list": feature_list}})
+        mongo_obj.conn.playerData.feature_info.update({"user_id": user_id}, {"$set": {"feature_list": feature_list}})
 
     def get_features(self, user_id):
         feature_info = mongo_obj.conn.playerData.feature_info.find_one({"user_id": user_id})
