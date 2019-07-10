@@ -1,55 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab585326-892f-4cb3-9e80-a94fc81e2c5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/Test/unit_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/decorator/singleton.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/logic/RegisterManager.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/logic/UserManager.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/public/data_format.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apps/views/business.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/decorator/userVerify.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/logger.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/logic/Features.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/logic/PlayerInfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/middlewares/addConf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/middlewares/check_conf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/middlewares/token_verify.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/models/DB.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/models/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/bytes_to_str.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/cheek_token.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/dict_operation.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/encryption.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/json_format_filter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/mail_verify.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/secrets.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/token.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/token_cype.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/public/word_filter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/apps/views/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gun_user.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gun_user_dev.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gun_user_mac.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger_dev.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger_local.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logger_test.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/screen.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/settings/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/settings/conf_onoff.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/settings/local.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/settings/usercenter_nginx.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/u_runserver.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/__init__.py" afterPath="$PROJECT_DIR$/apps/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/config/__init__.py" afterPath="$PROJECT_DIR$/apps/config/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/db_engine/__init__.py" afterPath="$PROJECT_DIR$/apps/db_engine/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/logic/FeaturePackage.py" afterPath="$PROJECT_DIR$/apps/logic/FeaturePackage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/middlewares/log.py" afterPath="$PROJECT_DIR$/apps/middlewares/log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/views/user.py" afterPath="$PROJECT_DIR$/apps/views/user.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logger.conf" afterPath="$PROJECT_DIR$/logger.conf" />
-    </list>
+    <list default="true" id="ab585326-892f-4cb3-9e80-a94fc81e2c5c" name="Default" comment="" />
     <ignored path="new_usercenter2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -349,7 +301,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="777" />
@@ -743,7 +694,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="23" width="1280" height="777" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18739903" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
