@@ -1,12 +1,9 @@
 import logging
 import logging.config
 from flask import Flask
-# from apps import config
+
 import werkzeug.utils
 from apps.middlewares import log
-
-
-
 
 def register_middlewares(new_app, path, middlewares):
     for name in middlewares:
@@ -22,41 +19,25 @@ def register_middlewares(new_app, path, middlewares):
             new_app.teardown_request(teardown_request)
     return new_app
 
-
-
-def t():
+def create_app():
     app = Flask(__name__)
-    from apps.views import user,test
+    from apps.views import user, business
 
     app.register_blueprint(user.bp)
-    app.register_blueprint(test.bp)
+    app.register_blueprint(business.bb)
 
-    from settings.conf_onoff import on_off_dic
-    conf = ""
-    for key in on_off_dic:
-        print(key)
-        print(on_off_dic[key])
-        if on_off_dic[key]:
-            conf = key
-            break
-    if conf == "online":
-        print("日志配置online")
-        logging.config.fileConfig("logger.conf", disable_existing_loggers=False)
-    elif conf == "dev":
-        print("日志配置dev")
-        logging.config.fileConfig("logger_dev.conf", disable_existing_loggers=False)
-    elif conf == "test":
-        print("日志配置test")
-        logging.config.fileConfig("logger_test.conf", disable_existing_loggers=False)
-    elif conf == "local":
-        print("日志配置local")
-        logging.config.fileConfig("logger_local.conf", disable_existing_loggers=False)
+    # init log config
+    logging.config.fileConfig("logger.conf", disable_existing_loggers=False)
 
     register_middlewares(app, 'apps.middlewares', [
         "log",
     ])
-    # config.init()
+
     return app
 
-app = t()
+app = create_app()
+
+
+
+
 

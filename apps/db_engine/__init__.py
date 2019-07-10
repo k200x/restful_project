@@ -4,48 +4,6 @@ import json
 import pymongo
 
 from settings.local import redis_db, mongo_db
-from settings.local import START, username, password, CONN_ADDR1, CONN_ADDR2, REPLICAT_SET
-from apps.public.bytes_to_str import convert
-from constant import NUMBERS
-
-
-# class RedisDB(object):
-#     '''
-#     字符串
-#     '''
-#     def __init__(self, **kwargs):
-#         try:
-#             self.conn = redis.StrictRedis(**kwargs)
-#
-#         except Exception as e:
-#             for i in range(5):
-#                 self.conn = redis.StrictRedis(**kwargs)
-#
-#
-#     def conn(self):
-#         return self.conn
-#
-#     def add(self, key, value):
-#         result = self.conn.set(key, value)
-#         return result
-#
-#     def get(self, key):
-#         result = self.conn.get(key)
-#         return result
-#
-#     # 更新
-#     def update(self, key, value):
-#         result = self.conn.get(key)
-#         if result:
-#             result2 = self.conn.set(key, value)
-#             return result2
-#         else:
-#             print("key " + key + "is not found")
-#
-#     def rem(self,key):
-#         result = self.conn.delete(key)
-#         if result != 0:
-#             return result
 
 class MongoDB(object):
     def __init__(self, table):
@@ -177,30 +135,6 @@ class MongoDB(object):
             raise e
 
         return result
-
-
-class Mongo_DB(object):
-    def __init__(self,**kwargs):
-        if START:
-            self.conn = pymongo.MongoClient([CONN_ADDR1], port=27017)
-            self.conn.admin.authenticate(username, password)
-        else:
-            self.conn = pymongo.MongoClient(**kwargs)
-
-
-
-        # try:
-        #     self.conn = pymongo.MongoClient(**kwargs)
-        # except Exception as e:
-        #
-        #     print(e)
-
-    def conn(self):
-        return self.conn
-
-    def get(self):
-        pass
-
 
 class RedisDB(object):
     '''
@@ -490,5 +424,5 @@ class RedisDB(object):
 
 
 redis_obj = RedisDB(**redis_db)
-mongo_obj = Mongo_DB(**mongo_db)
+mongo_obj = MongoDB(**mongo_db)
 
